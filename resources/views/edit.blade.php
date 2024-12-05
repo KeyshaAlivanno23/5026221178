@@ -1,42 +1,44 @@
 @extends('template')
 
-@section('tulisan1', 'Edit Pegawai')
+@section('tulisan1', 'Edit sandal')
 
 @section('link1')
-<a href="/pegawai"> Kembali</a>
+<a href="/sandal"> Kembali</a>
 
 @endsection
 
     @section('konten')
-	@foreach($pegawai as $p)
-	<form action="/pegawai/update" method="post">
+	@foreach($sandal as $p)
+	<form action="/sandal/update" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->pegawai_id }}"> <br/>
+		<input type="hidden" name="kode" value="{{ $p->kodesandal }}"> <br/>
         <div class="row mb-3">
-            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+            <label for="merk" class="col-sm-2 col-form-label">Merk</label>
             <div class="col-sm-10">
-              <input type="text" name="nama" class="form-control" id="nama" required="required" value="{{ $p->pegawai_nama }}">
+              <input type="text" name="merk" class="form-control" id="merk" required="required">
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+            <label for="stock" class="col-sm-2 col-form-label">Stock</label>
             <div class="col-sm-10">
-              <input type="text" name="jabatan" class="form-control" id="jabatan" required="required" value="{{ $p->pegawai_jabatan }}">
+              <input type="number" name="stock" class="form-control" id="stock" required="required">
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="umur" class="col-sm-2 col-form-label">Umur</label>
+            <label for="tersedia" class="col-sm-2 col-form-label">Tersedia</label>
             <div class="col-sm-10">
-              <input type="text" name="umur" class="form-control" id="umur" required="required" value="{{ $p->pegawai_umur }}">
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-            <div class="col-sm-10">
-              <textarea type="text" name="alamat" class="form-control" id="alamat" required="required">{{ $p->pegawai_alamat }}</textarea>
+              <!-- Pilihan "Ada" -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tersedia" id="ada" value="1" required>
+                <label class="form-check-label" for="ada">Ada</label>
+              </div>
+              <!-- Pilihan "Habis" -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tersedia" id="habis" value="0" required>
+                <label class="form-check-label" for="habis">Habis</label>
+              </div>
             </div>
           </div>
 

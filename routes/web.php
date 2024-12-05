@@ -77,16 +77,16 @@ Route::get('blog', function () {
     return view('blog');
 });
 
-Route::get('/pegawai','App\Http\Controllers\PegawaiControllerDB@index');
+Route::get('/sandal','App\Http\Controllers\sandalControllerDB@index');
 
-Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiControllerDB@tambah');
+Route::get('/sandal/tambah','App\Http\Controllers\sandalControllerDB@tambah');
 
-Route::post('/pegawai/store','App\Http\Controllers\PegawaiControllerDB@store');
+Route::post('/sandal/store','App\Http\Controllers\sandalControllerDB@store');
 
-Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiControllerDB@edit');
+Route::get('/sandal/edit/{id}','App\Http\Controllers\sandalControllerDB@edit');
 
-Route::post('/pegawai/update','App\Http\Controllers\PegawaiControllerDB@update');
+Route::post('/sandal/update','App\Http\Controllers\sandalControllerDB@update');
 
-Route::get('/pegawai/cari','App\Http\Controllers\PegawaiControllerDB@cari');
+Route::get('/sandal/cari','App\Http\Controllers\sandalControllerDB@cari');
 
-Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiControllerDB@hapus');
+Route::get('/sandal/hapus/{id}','App\Http\Controllers\sandalControllerDB@hapus');
