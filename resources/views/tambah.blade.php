@@ -1,9 +1,9 @@
 @extends('template')
 
-@section('tulisan1', 'Data sandal')
+@section('tulisan1', 'Data pegawai')
 
 @section('link1')
-<a href="/sandal"> Kembali</a>
+<a href="/pegawai"> Kembali</a>
 
 @endsection
 
@@ -11,7 +11,7 @@
 	<br/>
 	<br/>
 
-	<form action="/sandal/store" method="post">
+	<form action="/pegawai/store" method="post">
 		{{ csrf_field() }}
         <div class="row mb-3">
             <label for="merk" class="col-sm-2 col-form-label">Merk</label>

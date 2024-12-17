@@ -77,7 +77,21 @@ Route::get('blog', function () {
     return view('blog');
 });
 
-Route::get('/sandal','App\Http\Controllers\sandalControllerDB@index');
+Route::get('/pegawai','App\Http\Controllers\pegawaiControllerDB@index');
+
+Route::get('/pegawai/tambah','App\Http\Controllers\pegawaiControllerDB@tambah');
+
+Route::post('/pegawai/store','App\Http\Controllers\pegawaiControllerDB@store');
+
+Route::get('/pegawai/edit/{id}','App\Http\Controllers\pegawaiControllerDB@edit');
+
+Route::post('/pegawai/update','App\Http\Controllers\pegawaiControllerDB@update');
+
+Route::get('/pegawai/cari','App\Http\Controllers\pegawaiControllerDB@cari');
+
+Route::get('/pegawai/hapus/{id}','App\Http\Controllers\pegawaiControllerDB@hapus');
+
+Route::get('/sandal','App\Http\Controllers\sandalControllerDB@indexSandal');
 
 Route::get('/sandal/tambah','App\Http\Controllers\sandalControllerDB@tambah');
 
@@ -90,3 +104,16 @@ Route::post('/sandal/update','App\Http\Controllers\sandalControllerDB@update');
 Route::get('/sandal/cari','App\Http\Controllers\sandalControllerDB@cari');
 
 Route::get('/sandal/hapus/{id}','App\Http\Controllers\sandalControllerDB@hapus');
+
+Route::get('/karyawan','App\Http\Controllers\karyawanControllerDB@index');
+
+Route::get('/karyawan/tambahKaryawan','App\Http\Controllers\karyawanControllerDB@tambahKaryawan');
+
+Route::post('/karyawan/storekaryawan','App\Http\Controllers\karyawanControllerDB@storekaryawan');
+
+Route::get('/karyawan/edit/{id}','App\Http\Controllers\karyawanControllerDB@editKaryawan');
+
+Route::post('/karyawan/update','App\Http\Controllers\karyawanControllerDB@updatekaryawan');
+
+
+Route::get('/karyawan/hapus/{id}','App\Http\Controllers\karyawanControllerDB@hapuskaryawan');

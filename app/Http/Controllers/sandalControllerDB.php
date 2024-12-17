@@ -7,17 +7,18 @@ use Illuminate\Http\Request;
 
 class sandalControllerDB extends Controller
 {
-    public function index()
+    public function indexSandal()
     {
     	// mengambil data dari table sandal
     	//$sandal = DB::table('sandal')->get();
         $sandal = DB::table('sandal')->paginate(10);
 
     	// mengirim data sandal ke view index
-        return view('index',['sandal' => $sandal]);
+        return view('indexSandal',['sandal' => $sandal]);
     	//return view ('index',[' sandal' => $sandal]);
 
     }
+
 
     // method untuk menampilkan view form tambah sandal
     public function tambah()
@@ -88,7 +89,7 @@ class sandalControllerDB extends Controller
 		->paginate();
 
     		// mengirim data sandal ke view index
-		return view('index',['sandal' => $sandal]);
+		return view('indexSandal',['sandal' => $sandal]);
 
 	}
 }

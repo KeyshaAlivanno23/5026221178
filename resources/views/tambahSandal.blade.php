@@ -1,17 +1,18 @@
 @extends('template')
 
-@section('tulisan1', 'Edit Karywa')
+@section('tulisan1', 'Data sandal')
 
 @section('link1')
-<a href="/karyawan"> Kembali</a>
+<a href="/sandal"> Kembali</a>
 
 @endsection
 
-    @section('konten')
-	@foreach($karyawan as $p)
-	<form action="/karyawan/update" method="post">
+@section('konten')
+	<br/>
+	<br/>
+
+	<form action="/sandal/store" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" name="kode" value="{{ $p->kodepegawai }}"> <br/>
         <div class="row mb-3">
             <label for="merk" class="col-sm-2 col-form-label">Merk</label>
             <div class="col-sm-10">
@@ -31,12 +32,12 @@
             <div class="col-sm-10">
               <!-- Pilihan "Ada" -->
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="tersedia" id="ada" value="1" required>
+                <input class="form-check-input" type="radio" name="tersedia" id="ada" value="Y" required>
                 <label class="form-check-label" for="ada">Ada</label>
               </div>
               <!-- Pilihan "Habis" -->
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="tersedia" id="habis" value="0" required>
+                <input class="form-check-input" type="radio" name="tersedia" id="habis" value="N" required>
                 <label class="form-check-label" for="habis">Habis</label>
               </div>
             </div>
@@ -49,9 +50,3 @@
           </div>
 	</form>
     @endsection
-	@endforeach
-
-
-
-</body>
-</html>
